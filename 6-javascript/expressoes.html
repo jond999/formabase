@@ -1,0 +1,83 @@
+<!doctype>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Expressões</title>
+
+		<script>
+			var dataAtual = new Date();
+			var anoAtual = dataAtual.getFullYear();
+			var mesAtual = dataAtual.getMonth() + 1;
+			var diaAtual = dataAtual.getUTCDate();
+			
+			function verificarIdade()
+			{
+				var anoSelecionado = document.verificacao.ano_nascimento.value;
+				var mesSelecionado = document.verificacao.mes_nascimento.value;
+				var diaSelecionado = document.verificacao.dia_nascimento.value;
+				var diferencaAnos = anoAtual - anoSelecionado;
+				var idade;
+
+				idade = calcularIdade(diaSelecionado, mesSelecionado, anoSelecionado);
+				
+				if(idade < 18 || idade > 130)
+				{
+					alert('Idade inválida para menores de 18 ou vampiros, zombies ou outros seres sobrenaturais! xD');
+
+					return false;
+				}
+				else
+				{
+					return true;
+				}
+			}
+
+			function calcularIdade(dia, mes, ano)
+			{
+				var idade;
+				var diferencaAnos = anoAtual - ano;
+
+				if((mes > mesAtual) || ((mes == mesAtual) && (dia > diaAtual)))
+					idade = diferencaAnos - 1;
+				else
+					 idade = diferencaAnos;
+
+				return idade;
+			}
+		</script>
+	</head>
+	
+	<body>
+		<form name="verificacao">
+			Dia Nascimento
+			<select name="dia_nascimento">
+				<option value="0">- Dia -</option>
+				<script>
+					for(var i = 1; i <= 31; i++)
+						document.write("<option value='" + i + "'>" + i + "</option>");
+				</script>
+			</select><br><hr>
+			Mês Nascimento
+			<select name="mes_nascimento">
+				<option value="0">- Mês -</option>
+				<script>
+					for(var i = 1; i <= 12; i++)
+						document.write("<option value='" + i + "'>" + i + "</option>");
+				</script>
+			</select><br><hr>					
+			Ano Nascimento
+			<select name="ano_nascimento">
+				<option value="0">- Ano -</option>
+				<script>
+					for(var i = anoAtual; i >= 1800; i--)
+						document.write("<option value='" + i + "'>" + i + "</option>");
+				</script>
+			</select>
+
+			<br><br>
+			<a href="http://formabase.com" onclick="return verificarIdade();">
+				Ir para formabase.com
+			</a>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Eventos Formulários</title>
+	</head>
+	
+	<body>
+		<p>
+			<input size="100" id="campo1" type="text" 
+				value="Clique aqui para o campo receber o foco!" 
+				onfocus="this.value='Campo com foco!'" 
+				onblur="this.value='Agora não!'"
+			/>
+		</p>
+
+		<p>
+			<input size="100" id="campo2" type="text" 
+				value="Texto inicial!" 
+				onchange="this.value='O valor do campo foi alterado'" 
+			/>
+		</p>	
+
+		<p>
+			<input size="100" id="campo3" type="text"
+				value="Seleccione este texto!"  
+				onselect="alert('O texto foi seleccionado');" 
+			/>
+		</p>			
+	</body>
+</html>

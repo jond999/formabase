@@ -1,0 +1,30 @@
+<!doctype>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Programação Objetos</title>
+
+		<script src="js/carro.js"></script>
+	</head>
+	
+	<body>
+		<script>
+			var carro1 = new Carro("35-12-FL", "Audi", 50);
+			var carro2 = new Carro("82-49-RM", "Citroen", 35);
+			var carro3 = new Carro("73-59-AP", "Mercedes", 75);
+			
+			carro1.mostrar();
+			carro2.mostrar();
+			carro3.mostrar();
+
+			carro1.velocidade = 20;	
+			document.write('<br>Velocidade do carro 1 depois de mudarmos o atributo "velocidade": ' + carro1.velocidade);
+
+			carro1.acelerar();
+			document.write('<br>Velocidade do carro 1 depois de chamarmos o método "acelerar()": ' + carro1.velocidade);	
+
+			carro1.travar();
+			document.write('<br>Velocidade do carro 1 depois de chamarmos o método "travar()": ' + carro1.velocidade);					
+		</script>	
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Âmbito das variáveis</title>
+	</head>
+	
+	<body>		
+		<script>
+			var x = 5;
+			document.write('<h3>O valor de x é ' + x + '.</h3>');
+
+			function minhaFuncao()
+			{
+				var y = 8;
+
+				document.write('<h3>O valor de x dentro da função é ' + x + '.</h3>');
+				document.write('<h3>O valor de y dentro da função é ' + y + '.</h3>');
+			}
+
+			minhaFuncao();
+
+			// esta instrução não vai resultar em nada, porque y é uma variável local
+			// document.write('<h3>O valor de y fora da função é ' + y + '.</h3>');
+
+			function outraFuncao()
+			{
+				// foi criada uma variável local x apesar de já existir outra variável global x
+				var x = 250;
+
+				if(x > 100)
+					var z = x * 4;
+
+				document.write('<h3>O valor de z dentro da função é ' + z + '.</h3>');
+				document.write('<h3>O valor de x dentro da função é ' + x + '.</h3>');
+			}
+
+			outraFuncao();
+			document.write('<h3>O valor de x fora da função é ' + x + '.</h3>');
+
+			if(x > 0)
+			{
+				var fatorial = 1;
+
+				for(var i = 1; i <= x; i++)
+					fatorial *= i;
+
+				document.write('<h3>O fatorial de x é ' + fatorial + '.</h3>');
+			}
+
+			function maisOutraFuncao()
+			{
+				document.write('<h3>O fatorial de x dentro da função é ' + fatorial + '.</h3>');
+			}
+
+			maisOutraFuncao();
+
+			const imposto = 0.25;
+
+			document.write('<h3>O imposto é ' + imposto + '</h3>');
+
+			function calculaPrecoTotal(precoSemImposto)
+			{
+				const imposto = 0.10;
+
+				var precoTotal = precoSemImposto * imposto + precoSemImposto;
+
+				document.write('<h3>O preço total é ' + precoTotal + '</h3>');
+			}
+
+			calculaPrecoTotal(100);
+		</script>
+	</body>
+</html>

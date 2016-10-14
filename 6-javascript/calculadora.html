@@ -1,0 +1,45 @@
+<!doctype>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Calculadora</title>
+
+		<script>
+			function calcularOperacao(operacao)
+			{
+				var numero1 = parseInt(document.calculadora.op1.value);
+				var numero2 = parseInt(document.calculadora.op2.value);
+				var resultado;
+
+				switch(operacao)
+				{
+					case "soma":	resultado = numero1 + numero2;
+									break;
+
+					case "subtracao":	resultado = numero1 - numero2;
+										break;
+
+					case "multiplicacao":	resultado = numero1 * numero2;
+											break;
+
+					case "divisao":	resultado = numero1 / numero2;											
+				}
+
+				document.calculadora.res.value = resultado;
+			}									
+		</script>
+	</head>
+	
+	<body>
+		<form name="calculadora">
+			Operando 1 <input type="text" name="op1"><br><hr>
+			Operando 2 <input type="text" name="op2"><br><hr>
+			Resultado <input type="text" name="res">
+			<br><br>
+			<input type="button" value="+" onclick="calcularOperacao('soma');"><br><br>
+			<input type="button" value="-" onclick="calcularOperacao('subtracao');"><br><br>
+			<input type="button" value="*" onclick="calcularOperacao('multiplicacao');"><br><br>
+			<input type="button" value="/" onclick="calcularOperacao('divisao');">
+		</form>
+	</body>
+</html>

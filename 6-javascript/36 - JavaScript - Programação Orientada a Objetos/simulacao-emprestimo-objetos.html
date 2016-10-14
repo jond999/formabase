@@ -1,0 +1,36 @@
+<!doctype>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Simulação Empréstimo</title>
+		
+		<script src="js/emprestimo.js"></script>
+		<script>
+			function simularEmprestimo()
+			{
+				var simulacao1 = new Emprestimo();
+								
+				document.simulacao_emprestimo.resultado.value = simulacao1.gerarRelatorio();
+			}	
+		</script>
+	</head>
+	
+	<body>
+		<form name="simulacao_emprestimo">
+			<fieldset>
+				<legend>Simulação de Créditos</legend>
+
+				Nome Completo:					<input type="text" name="nome_completo"><br>
+				Valor Total do Empréstimo (€):	<input type="text" name="valor_emprestimo"><br>
+				Taxa de Juro (%):				<input type="text" name="taxa_juro"><br>
+				Prazo (Anos):					<input type="text" name="prazo_anos"><br>
+				
+				<input type="button" value="Calcular Prestação"	onclick="simularEmprestimo();">
+
+				<br><br>
+
+				Resultado: <textarea cols="50" rows="5" name="resultado"></textarea>
+			</fieldset>			
+		</form>		
+	</body>
+</html>

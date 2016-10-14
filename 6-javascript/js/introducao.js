@@ -1,0 +1,1 @@
+alert("Bem-vindos a este Website espetacular!");

@@ -1,0 +1,45 @@
+<!doctype>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Variáveis</title>
+
+		<script>
+			var nome = "Manel";
+			var apelido = "Afonso";
+			var numCarros = 2;
+
+			var numCliques = 0;
+		</script>
+	</head>
+	
+	<body>
+		<h1>Variáveis</h1>
+
+		<p>
+			<input type="button" 
+				value="Saber numero de carros" 
+				onclick="alert('O ' + nome + ' ' + apelido + ' tem ' + numCarros + ' automóveis');"
+			/>
+		</p>
+
+		<p>
+			<input type="button" 
+				value="Numero clicks" 
+				onclick="numCliques = numCliques + 1; alert('ja clicou ' + numCliques + ' vezes');"
+			/>
+		</p>
+
+		<form name="dados_utilizador">
+			Nome:		<input type="text" name="nome_utilizador"><br>
+			Apelido:	<input type="text" name="apelido_utilizador"><br>
+			<input type="button" value="Ola"
+				onclick="	
+							var nome = document.dados_utilizador.nome_utilizador.value;
+							var apelido = document.dados_utilizador.apelido_utilizador.value;
+							alert('Olá ' + nome + ' ' + apelido + '. Bem-vindo!');
+						"
+			/>
+		</form>		
+	</body>
+</html>

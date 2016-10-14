@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Orçamento - myFOLIO - Web Design &amp; Development</title>
+
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/styles.css" />
+		<script src="js/scripts.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<div class="row">
+				<div class="column ocuppies_1_of_3">
+					<h1 id="logo"><img src="img/logo-myfolio.png" alt="myFolio"></h1>
+				</div>
+				<div class="column ocuppies_2_of_3">
+					<nav>
+						<ul class="menu menu-main menu-vertical" id="main-navigation">
+							<li><a>Início</a></li>
+							<li><a>Blog</a></li>
+							<li class="current" id="servicos"><a>Serviços</a>
+								<ul>
+									<li><a>Web Design</a></li>
+									<li><a>Web Development</a></li>
+									<li><a>Desenho Gráfico</a></li>
+									<li><a>Manutenção Sistemas</a></li>
+									<li class="current"><a href="orcamento.html">Orçamentos</a></li>
+								</ul>
+							</li>
+							<li id="portfolio"><a>Portfólio</a></li>
+							<li><a href="contactos.html">Contactos</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		
+			<div class="row">
+				<div class="column ocuppies_3_of_3">
+					<hgroup id="main-title">
+						<h1>Orçamentos</h1>
+						<h3>Faça uma simulação e conheça os melhores preços do mercado!</h3>
+					</hgroup>
+				</div>
+			</div>
+		</header>
+		<div id="content">
+			<form name="simulacao_orcamento">
+				<div class="row">
+					<div class="column ocuppies_2_of_3">
+						<div class="container">
+							<h4>Dados para Orçamento</h4>
+							<p>
+								Introduza os dados para o projeto que pretende e clique no botão no fim do formulário.
+								A sua cotação irá aparecer na área de resultado.
+							</p>
+						
+							<dl>
+								<dt><label for="numero_horas">Tipo de Projeto</label></dt>
+								<dd>
+									<select name="tipo_projeto" class="input-medium">
+										<option value="10">Logótipo</option>
+										<option value="30">Imagem Coorporativa</option>
+										<option value="40">Web Design</option>
+										<option value="60">Web Development</option>
+										<option value="20">Manutenção Sistemas</option>
+									</select>	
+								</dd>
+								
+								<dt><label for="valor_hora">Valor hora (€)</label></dt>
+								<dd><input type="text" name="valor_hora" value="30" class="input-tiny" readonly></dd>
+								
+								<dt><label for="iva">Taxa IVA (%)</label></dt>
+								<dd><input type="text" name="iva" value="23"  class="input-tiny" readonly></dd>
+								
+								<dt><label for="desconto">Desconto</label></dt>
+								<dd>
+									<select name="desconto" class="input-medium">
+										<option value="0">Nenhum</option>
+										<option value="10">Para Particular</option>
+										<option value="15">Para Organizações sem Fins Lucrativos</option>
+										<option value="20">Para Cliente</option>
+									</select>
+								</dd>
+
+								<dt><label for="prazo_entrega">Prazo entrega</label></dt>
+								<dd>
+									<select name="prazo_entrega" class="input-medium" style="width: 50px;">
+										<script>
+											for(var i = 1; i <= 12; i++ )
+												document.write("<option value='" + i +"'>" + i + "</option>");
+										</script>										
+									</select> Meses
+								</dd>
+								
+								<dt></dt>
+								<dd>
+									<input type="button" class="button-main" name="calcular" id="calcular" 
+										value="Calcular Orçamento &gt;" 	
+										onclick="simularOrcamento();">
+								</dd>
+							</dl>
+							
+						</div>
+					</div>
+					<div class="column ocuppies_1_of_3">
+						<div class="container">
+						<h4>Resultado</h4>
+							<p>Veja aqui a cotação para o seu projeto! Caso tenha alguma dúvida não hesite em <a href="contactos.html">contactar-me</a>!</p>
+							<input 	type="text" name="resultado" id="resultado" class="full result" 			readonly value="---">
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<footer>
+			<div class="row">
+				<div class="column ocuppies_2_of_3">
+					<ul class="inline-list">
+						<li><a>Início</a></li>
+						<li><a>Blog</a></li>
+						<li><a>Serviços</a></li>
+						<li><a>Portfólio</a></li>
+						<li><a href="contactos.html">Contactos</a></li>
+					</ul>
+				</div>
+				<div class="column ocuppies_1_of_3">
+					<ul class="inline-list">
+						<li><a href="#"><img src="img/social-facebook.png"></a></li>
+						<li><a href="#"><img src="img/social-twitter.png"></a></li>
+						<li><a href="#"><img src="img/social-linkedin.png"></a></li>
+						<li><a href="#"><img src="img/social-gplus.png"></a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
